@@ -1,22 +1,13 @@
-##bktree
+## bktree (BK Tree)
 
-编辑距离（Edit Distance），又称Levenshtein距离，是指两个字串之间，由一个转成另一个所需的最少编辑操作次数。
-
-许可的编辑操作包括将一个字符替换成另一个字符，插入一个字符，删除一个字符。
-
-
-bktree的作用是：
-
-给定一个词典（很多字符串），然后每输入一个字符串和一个数字k,
-
-从词典中查找出与该字符串编辑距离小于等于k的字符串。
+A BKTree implementation
 
 ~~~ go
 package main
 
 import (
 	"fmt"
-	"github.com/gansidui/bktree"
+	"github.com/nomota/bktree"
 	"log"
 )
 
@@ -42,8 +33,6 @@ func main() {
 
 ~~~
 
-
-
-##LICENSE
+## LICENSE
 
 MIT
