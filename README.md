@@ -53,9 +53,6 @@ func main() {
     fmt.Println(ret)
 }
 
-
-}
-
 ~~~
 
 ## LICENSE
