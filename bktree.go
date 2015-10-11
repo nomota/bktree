@@ -81,6 +81,9 @@ func (this *BKTree) find(rt *bktreeNode, s string, k int) (ret []string) {
 
 	dx, dy := max(0, d-k), d+k
 	for i := dx; i <= dy; i++ {
+		if  i > this.levenshteinLimit {
+			break;
+		}
 		if rt.child[i] != nil {
 			ret = append(ret, this.find(rt.child[i], s, k)...)
 		}
