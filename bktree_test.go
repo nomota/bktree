@@ -16,7 +16,7 @@ func main() {
         log.Fatal()
     }
 
-    bk := bktree.NewBKTreeNode("", 0)
+    bk := bktree.NewBKTreeNode("", 0)  // <--- initialize the tree
 
     bk.Insert("ABCD")
     bk.Insert("ACED")
