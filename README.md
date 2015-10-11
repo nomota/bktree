@@ -1,6 +1,6 @@
 ## bktree (BK Tree)
 
-A BKTree implementation
+A BK Tree implementation (a tree structure for spelling checker - fuzzy search of a string)
 
 ~~~ go
 package main
@@ -12,23 +12,48 @@ import (
 )
 
 func main() {
-	if bktree.Levenshtein("hello", "Aelo") != 2 {
-		log.Fatal()
-	}
 
-	if bktree.Levenshtein("我爱你", "你爱我") != 2 {
-		log.Fatal()
-	}
+    if bktree.Levenshtein("hello", "Aelo") != 2 {
+        log.Fatal()
+    }
 
-	bk := bktree.New()
-	bk.SetLevenshteinLimit(50)
+    if bktree.Levenshtein("我爱你", "你爱我") != 2 {
+        log.Fatal()
+    }
 
-	bk.Insert("ABCD")
-	bk.Insert("ACED")
-	bk.Insert("SBDE")
+    bk := bktree.NewBKTreeNode("", 0) // <--- Initialize the tree
 
-	ret := bk.Find("AABB", 3)
-	fmt.Println(ret)
+    bk.Insert("ABCD")
+    bk.Insert("ACED")
+    bk.Insert("SBDE")
+    bk.Insert("가나다")
+    bk.Insert("가나다라")
+    bk.Insert("AABC")
+    bk.Insert("abcd")
+    bk.Insert("acd")
+    bk.Insert("go")
+    bk.Insert("went")
+    bk.Insert("love")
+    bk.Insert("bool")
+    bk.Insert("fact")
+    bk.Insert("join")
+    bk.Insert("eleven")
+    bk.Insert("seventeen")
+    bk.Insert("element")
+    bk.Insert("test")
+
+    bk.Display() // <--- display indentated tree structure
+
+    fmt.Printf("bk.Size(): %d\n", bk.Size())  // <-- how many words are in the tree
+
+    ret := bk.Find("AABB", 2)
+    fmt.Println(ret)
+
+    ret = bk.Find("joan", 1)
+    fmt.Println(ret)
+}
+
+
 }
 
 ~~~
