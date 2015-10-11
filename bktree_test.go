@@ -2,7 +2,7 @@ package bktree
 
 import (
     "fmt"
-    "./bktree"
+    "github.com/nomota/bktree"
     "log"
     "strings"
 )
